@@ -12,27 +12,13 @@ namespace App;
 class Management extends IOrganizationPrototype
 {
     const UNIT = "Management";
-    private $research = "research";
-    private $planning = "planning";
-    private $operations = "operations";
+    private $aDepartment = array('research' => 'research', 'planning' =>'planning', 'operations' => 'operations');
 
     public function __clone(){}
 
-    public function setDepartment($departmentCode)
+    public function setDepartment($department)
     {
-        switch($departmentCode) {
-            case 201:
-                $this->department = $this->research;
-                break;
-            case 202:
-                $this->department = $this->planning;
-                break;
-            case 203:
-                $this->department = $this->operations;
-                break;
-            default:
-                $this->department = "Unrecognized Management";
-                break;
-        }
+        //Or $this->department = $this->aDepartment[$department];
+        $this->department = array_search($department, $this->aDepartment);
     }
 }

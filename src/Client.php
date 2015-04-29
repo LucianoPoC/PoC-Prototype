@@ -28,13 +28,13 @@ class Client
         $this->setEmployee($Jacob, "Jacob Jones", 102, "ts102-1234", "jacob.png");
         $this->showEmployee($Jacob);
         $Ricky = clone $this->managerPrototype;
-        $this->setEmployee($Ricky, "Ricky Rodriguez", 203, "ts203-1234", "ricky.png");
+        $this->setEmployee($Ricky, "Ricky Rodriguez", "planning", "ts203-1234", "ricky.png");
         $this->showEmployee($Ricky);
         $Olivia = clone $this->engineerPrototype;
-        $this->setEmployee($Olivia, "Olivia Perez", 302, "ts302-1234", "olivia.png");
+        $this->setEmployee($Olivia, "Olivia Perez", "design", "ts302-1234", "olivia.png");
         $this->showEmployee($Olivia);
         $John = clone $this->engineerPrototype;
-        $this->setEmployee($John, "John Jackson", 303, "ts303-1234", "john.png");
+        $this->setEmployee($John, "John Jackson", "development", "ts303-1234", "john.png");
         $this->showEmployee($John);
     }
 
