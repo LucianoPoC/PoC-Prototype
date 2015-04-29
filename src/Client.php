@@ -8,13 +8,14 @@
 
 namespace App;
 
-
+ini_set("display_errors", true);
 class Client
 {
     private $marketPrototype;
     private $managerPrototype;
     private $engineerPrototype;
 
+    private $modelClass;
     /**
      * Client constructor.
      */
@@ -36,6 +37,15 @@ class Client
         $John = clone $this->engineerPrototype;
         $this->setEmployee($John, "John Jackson", "development", "ts303-1234", "john.png");
         $this->showEmployee($John);
+
+        //Dynamic request class
+        $aDataBD = array('Management');
+        $className = $aDataBD[0];
+        $this->modelClass = new $className;
+        echo $this->modelClass;
+        $TessDynamic = clone $this->modelClass;
+        $this->setEmployee($TessDynamic, "Tess Smith Dynamic", 101, "ts101-1235", "tess.png");
+        $this->showEmployee($TessDynamic);
     }
 
 
