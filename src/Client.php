@@ -8,7 +8,6 @@
 
 namespace App;
 
-ini_set("display_errors", true);
 class Client
 {
     private $marketPrototype;
